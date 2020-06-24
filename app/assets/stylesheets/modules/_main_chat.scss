@@ -98,6 +98,10 @@
         font-size: 25px;
         line-height: 50px;       
       }
+      .btn {
+        display: none;
+      }
+
 
     }
     &__post {
@@ -109,6 +113,7 @@
       margin-left: 15px;
       border: none;
     }
+
   }
 
 }
