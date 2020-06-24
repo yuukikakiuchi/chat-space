@@ -1,1 +1,25 @@
-＜サイドバーa＞
+.Sidebar
+  .SidebarHeader
+    .SidebarHeader__list
+      .SidebarHeader__user-name
+        name
+      %ul.SidebarHeader__icons
+        %li.SidebarHeader__icon
+          = link_to '#' do
+            = icon('fas', 'edit' )
+        %li.SidebarHeader__icon
+          = link_to '#' do
+            = icon('fas', 'cog' )
+
+  .SidebarGroup
+    .SidebarGroup__list
+      .SidebarGroup__name
+        teamname
+      .SidebarGroup__message
+        まだメッセージがありません
+    
+    .SidebarGroup__list
+      .SidebarGroup__name
+        testname
+      .SidebarGroup__message
+        まだメッセージがございません

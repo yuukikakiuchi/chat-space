@@ -1,0 +1,60 @@
+.Sidebar {
+  width: 300px;
+  color: #ffffff;
+}
+
+
+.SidebarHeader {
+  background-color: #253141;
+  font-weight: bold;
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  .SidebarHeader__list {
+    margin: 0 20px;
+    height: 20px;
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+    &__user-name {
+    font-size: 16px;
+    // color: #ffffff;
+    align-self: center;
+    }
+
+    &__icons {
+      width: 60px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__icon {
+      margin-left: 5px;
+      i {
+        color: #ffffff;  
+        text-decoration: none;
+      }
+    }
+}
+
+.SidebarGroup {
+  background-color: #2f3e51;
+  height: 100vh;
+
+
+  &__list {
+    padding: 20px 20px 40px 20px;
+  }
+  &__name {
+    font-size: 15px;
+    margin-bottom: 5px;
+
+  }
+  &__message {
+    font-size: 11px;
+
+  }
+}
