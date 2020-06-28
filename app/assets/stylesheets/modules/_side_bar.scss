@@ -11,14 +11,13 @@
   display: flex;
   align-items: center;
 
-  .SidebarHeader__list {
+  &__list {
     margin: 0 20px;
     height: 20px;
     width: 260px;
     display: flex;
     justify-content: space-between;
   }
-
     &__user-name {
     font-size: 16px;
     align-self: center;
@@ -36,16 +35,24 @@
         color: #ffffff;  
         text-decoration: none;
       }
-    }
+    } 
+  
 }
 
 .SidebarGroup {
   background-color: #2f3e51;
-  height: 100vh;
+  height: calc(100vh - 100px);
+  overflow: scroll;
+
 
 
   &__list {
     padding: 20px 20px 40px 20px;
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
   }
   &__name {
     font-size: 15px;

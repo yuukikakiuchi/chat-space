@@ -12,7 +12,9 @@ class UsersController < ApplicationController
       render :edit
       # できなかった場合editのビューを出す
     end
+ 
   end
+
 
   private
 
