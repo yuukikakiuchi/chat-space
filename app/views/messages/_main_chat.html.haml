@@ -2,38 +2,51 @@
   .RightHeader
     .RightHeader__group
       .RightHeader__groupname
-        test
-      %ul.RightHeader__groupmenberlist
-        menber:
-        %li.RightHeader__groupmenber
-          masa
-    = link_to '#' ,class: "RightHeader__editbtn" do
+        = @group.name
+      .RightHeader__groupmenberlist
+        Member:&nbsp
+        -# - @group.users.each do |user|
+        - @group.users.each do |user|
+          .RightHeader__groupmenber
+            = user.name
+
+    = link_to edit_group_path(@group) ,class: "RightHeader__editbtn" do
       Edit
     
   .Message
-    .Message__box
-      .Message__list
-        .Message__name
-          masa 
-        .Message__time
-          2019/11/20(wed)17:23:32
-      .Message__coment
-        おはよう！
+    = render @messages
+    -# .Message__box
+    -#   .Message__list
+    -#     .Message__name
+    -#       masa 
+    -#     .Message__time
+    -#       2019/11/20(wed)17:23:32
+    -#   .Message__coment
+    -#     おはよう！
   
-    .Message__box
-      .Message__list
-        .Message__name
-          masa 
-        .Message__time
-          2019/11/21(wed)17:23:32
-      .Message__coment
-        こんにちは
+    -# .Message__box
+    -#   .Message__list
+    -#     .Message__name
+    -#       masa 
+    -#     .Message__time
+    -#       2019/11/21(wed)17:23:32
+    -#   .Message__coment
+    -#     こんにちは
   
+  -# .MessageForm
+  -#   %form.MessageForm__group
+  -#     .MessageForm__list
+  -#       %input.MessageForm__input{type: 'text', placeholder: 'type a message'}
+  -#       %label.MessageForm__image
+  -#         =icon('far', 'image')
+  -#         %input.btn{type: 'file'}
+  -#     %input.MessageForm__post{type: 'submit', value: 'Send'}
+
   .MessageForm
-    %form.MessageForm__group
+    = form_with model: [@group, @message], html: {class: 'MessageForm__group'}, local: true do |f|
       .MessageForm__list
-        %input.MessageForm__input{type: 'text', placeholder: 'type a message'}
-        %label.MessageForm__image
-          =icon('far', 'image')
-          %input.btn{type: 'file'}
-      %input.MessageForm__post{type: 'submit', value: 'Send'}
+        = f.text_field :content, class: 'MessageForm__input', placeholder: 'type a message'
+        = f.label :image, class: 'MessageForm__image' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'btn'
+      = f.submit 'Send', class: 'MessageForm__post'

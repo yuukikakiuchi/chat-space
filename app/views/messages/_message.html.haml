@@ -1,0 +1,25 @@
+.Message__box
+  .Message-list
+    .Message__name
+      = message.user.name
+    .Message__time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .Message__coment
+    - if message.content.present?
+      %p.Message__content
+        = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
+
+
+
+-# .MessageBox
+-#   .MessageInfo
+-#     .MessageInfo__userName
+-#       = message.user.name
+-#     .MessageInfo__date
+-#       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+-#   .Message
+-#     - if message.content.present?
+-#       %p.Message__content
+-#         = message.content
+-#     = image_tag message.image.url, class: 'Message__image' if message.image.present?
