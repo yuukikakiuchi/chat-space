@@ -1,7 +1,5 @@
 .Chatmain {
   width: calc(100vw - 300px);
-  // min-height: 100vh;
-  // position: relative;
   background-color: red;
 
   
@@ -11,7 +9,7 @@
     display: flex;
     padding: 0 40px;
     justify-content: space-between;
-    // align-items: center;
+  
     &__groupname {
       margin-top: 35px;
       color: #333333;
@@ -22,6 +20,11 @@
       color: #999999;
       font-size: 12px;
       display: flex;
+      
+    }
+
+    &__groupmenber {
+      padding-right: 5px;
     }
     
     &__editbtn {
@@ -52,6 +55,7 @@
 
     &__list {
       display: flex;
+      
     }
 
     &__name {
@@ -62,6 +66,8 @@
     &__time {
       color: #999999;
       font-size: 12px;
+      margin-left:10px;
+
     }
     &__coment {
       margin-top: 12px;
@@ -76,8 +82,7 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 40px 20px 40px;
-    // position: absolute;
-    // bottom: 0;
+   
   
     
     &__group {
@@ -87,7 +92,9 @@
     &__list {
       width: 100%;
       position: relative;
-      // height: 50px;
+      background-color: #ffffff;
+      padding-right: 45px;
+    
       
       
     }
@@ -99,6 +106,7 @@
       float: left;
     
     }
+
     &__image {
       background-color: #ffffff;
       position: absolute;
@@ -109,12 +117,8 @@
         font-size: 25px;
         line-height: 50px;       
       }
-      .btn {
-        display: none;
-      }
-
-
     }
+
     &__post {
       background-color: #38aef0;
       color: #fff;
@@ -124,6 +128,9 @@
       margin-left: 15px;
       border: none;
       float: right;
+    }
+    .btn {
+      display: none;
     }
 
   }
